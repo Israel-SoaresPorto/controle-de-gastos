@@ -151,16 +151,12 @@ body {
 }
 
 @media screen and (min-width: 30em) {
-    .dados {
-        padding-inline: 5em;
+    #modal {
+        width: 20em;
     }
 
-    #descricao {
-        flex-grow: 2;
-    }
-
-    #valor {
-        flex-grow: 1;
+    .saldo {
+        font-size: 1em;
     }
 
     .secao_valores_item {
@@ -170,8 +166,8 @@ body {
 }
 
 @media screen and (min-width: 64em) {
-    .dados {
-        padding-inline: 10em;
+    #modal {
+        width: 30em;
     }
     
     .secoes {
