@@ -35,6 +35,7 @@ body {
     width: 15em;
     padding: 1em;
     border: 1px solid var(--cor-secundaria);
+    margin: auto;
 }
 
 .modal_form {
