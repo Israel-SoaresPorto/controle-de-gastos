@@ -43,12 +43,6 @@ function exibirEm(secao, valores) {
     formatarParaMoeda(total);
 }
 
-// substitui virgula por ponto e formata o valor para tipo float
-function formatarValor(valor) {
-  let valorFormatado = valor.replace(",", ".");
-  return parseFloat(valorFormatado);
-}
-
 // formata o valor para moeda brasileira
 function formatarParaMoeda(valor) {
   return valor.toLocaleString("pt-BR", {
@@ -67,15 +61,6 @@ function somarValores(valores) {
 function limparCampos() {
   descricao.value = "";
   valor.value = "";
-}
-
-// valida o valor digitado
-function validarValor(valor) {
-  const regex = /^[0-9]+[[,.]?[0-9]{2}$/;
-
-  if (!regex.test(valor)) {
-    throw new Error("Valor inválido");
-  }
 }
 
 // insere os valores no array
