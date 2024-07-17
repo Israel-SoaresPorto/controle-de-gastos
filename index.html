@@ -12,26 +12,29 @@
         <img src="assets/control.png" class="header_imagem">
         <h1 class="header_titulo">Controle de Gastos</h1>
     </header>
-    <div class="dados">
-        <form class="dados_form" id="dados">
-            <div class="dados_inputs">
-                <input type="text" name="descricao" class="dados_input" id="descricao" placeholder="Descrição" required>
-                <input type="text" name="valor" class="dados_input" id="valor" placeholder="Valor" required>
-            </div>
-            <div class="dados_radios">
-                <input type="radio" name="tipo" class="dados_radio" id="receita" value="receita" required>
-                <label for="receita" class="dados_label">Receita</label>
-                <input type="radio" name="tipo" class="dados_radio" id="despesa" value="despesa" required>
-                <label for="despesa" class="dados_label">Despesa</label>
-            </div>
-            <button id="salvar" class="dados_button">Salvar</button>
+    <dialog open id="modal">
+        <form id="modal_form" formmethod="dialog">
+            <p>Adicionar Receita/Despesa</p>
+            <select name="tipo" id="tipo">
+                <option value="receita">Receita</option>
+                <option value="despesa">Despesa</option>
+            </select>
+            <label for="descricao">Descrição</label>
+            <input type="text" name="descricao" id="descricao">
+            <label for="valor">Valor</label>
+            <input type="number" name="valor" id="valor" step="0.01">
+            <menu>
+                <button type="button" id="fecharModal">Cancelar</button>
+                <button type="submit">Confirmar</button>
+            </menu>
         </form>
-    </div>
+    </dialog>
     <main class="conteudo">
         <div class="saldo">
             <img src="assets/money.png" alt="">
             <h2>Saldo Total</h2>
             <h2 class="saldo_total"> R$ 0,00</h2>
+            <button id="abrirModal">Adicionar</button>
         </div>
         <div class="secoes">
             <div class="secao" id="receitas">
