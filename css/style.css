@@ -90,14 +90,16 @@ body {
 }
 
 .saldo {
+    font-size: 0.8em;
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 1em;
+    justify-content: space-between;
+    gap: 2em;
 }
 
-.saldo img {
-    width: 4em;
+.saldo_titulo {
+    display: flex;
+    gap: 1em;
 }
 
 #abrirModal {

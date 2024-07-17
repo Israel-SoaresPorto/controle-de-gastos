@@ -1,56 +1,71 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/ico" href="assets/favicon.ico">
-    <link rel="stylesheet" href="css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/ico" href="assets/favicon.ico" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Controle de Gastos</title>
-</head>
-<body>
+  </head>
+  <body>
     <header class="header">
-        <img src="assets/control.png" class="header_imagem">
-        <h1 class="header_titulo">Controle de Gastos</h1>
+      <img src="assets/control.png" class="header_imagem" />
+      <h1 class="header_titulo">Controle de Gastos</h1>
     </header>
     <dialog id="modal">
-        <form id="form" class="modal_form" formmethod="dialog">
-            <h4 class="modal_form_titulo">Adicionar Receita/Despesa</h4>
-            <select name="tipo" id="tipo" class="modal_form_opcao" required>
-                <option value="receita">Receita</option>
-                <option value="despesa">Despesa</option>
-            </select>
-            <label for="descricao" class="modal_form_label">Descrição</label>
-            <input type="text" name="descricao" id="descricao" class="modal_form_input" required>
-            <label for="valor" class="modal_form_label">Valor</label>
-            <input type="number" name="valor" id="valor" step="0.01" min="0" class="modal_form_input" required>
-            <menu class="modal_acoes">
-                <button type="button" id="fecharModal" class="modal_form_button">Cancelar</button>
-                <button type="submit" class="modal_form_button">Confirmar</button>
-            </menu>
-        </form>
+      <form id="form" class="modal_form" formmethod="dialog">
+        <h4 class="modal_form_titulo">Adicionar Receita/Despesa</h4>
+        <select name="tipo" id="tipo" class="modal_form_opcao" required>
+          <option value="receita">Receita</option>
+          <option value="despesa">Despesa</option>
+        </select>
+        <label for="descricao" class="modal_form_label">Descrição</label>
+        <input
+          type="text"
+          name="descricao"
+          id="descricao"
+          class="modal_form_input"
+          required
+        />
+        <label for="valor" class="modal_form_label">Valor</label>
+        <input
+          type="number"
+          name="valor"
+          id="valor"
+          step="0.01"
+          min="0"
+          class="modal_form_input"
+          required
+        />
+        <menu class="modal_acoes">
+          <button type="button" id="fecharModal" class="modal_form_button">
+            Cancelar
+          </button>
+          <button type="submit" class="modal_form_button">Confirmar</button>
+        </menu>
+      </form>
     </dialog>
     <main class="conteudo">
-        <div class="saldo">
-            <img src="assets/money.png" alt="">
-            <h2>Saldo Total</h2>
-            <h2 class="saldo_total"> R$ 0,00</h2>
-            <button id="abrirModal">Adicionar</button>
+      <section class="saldo">
+        <div class="saldo_titulo">
+          <h2>Saldo Total</h2>
+          <h2 id="saldo_total">R$ 0,00</h2>
         </div>
-        <div class="secoes">
-            <div class="secao" id="receitas">
-                <h2>Receitas</h2>
-                <div class="secao_valores">
-                </div>
-                <h4 class="secao_total">Total: <span>R$ 0,00</span></h4>
-            </div>
-            <div class="secao" id="despesas">
-                <h2>Despesas</h2>
-                <div class="secao_valores">
-                </div>
-                <h4 class="secao_total">Total: <span>R$ 0,00</span></h4>
-            </div>
-        </content_container>
-    </main>   
+        <button id="abrirModal">Adicionar</button>
+      </section>
+      <section class="secoes">
+        <div class="secao" id="receitas">
+          <h2>Receitas</h2>
+          <div class="secao_valores"></div>
+          <h4 class="secao_total">Total: <span>R$ 0,00</span></h4>
+        </div>
+        <div class="secao" id="despesas">
+          <h2>Despesas</h2>
+          <div class="secao_valores"></div>
+          <h4 class="secao_total">Total: <span>R$ 0,00</span></h4>
+        </div>
+      </section>
+    </main>
     <script src="js/app.js"></script>
-</body>
+  </body>
 </html>
