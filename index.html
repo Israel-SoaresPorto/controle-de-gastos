@@ -13,19 +13,19 @@
         <h1 class="header_titulo">Controle de Gastos</h1>
     </header>
     <dialog open id="modal">
-        <form id="modal_form" formmethod="dialog">
-            <p>Adicionar Receita/Despesa</p>
-            <select name="tipo" id="tipo">
+        <form id="modal_form" class="modal_form" formmethod="dialog">
+            <h4 class="modal_form_titulo">Adicionar Receita/Despesa</h4>
+            <select name="tipo" id="tipo" class="modal_form_opcao" required>
                 <option value="receita">Receita</option>
                 <option value="despesa">Despesa</option>
             </select>
-            <label for="descricao">Descrição</label>
-            <input type="text" name="descricao" id="descricao">
-            <label for="valor">Valor</label>
-            <input type="number" name="valor" id="valor" step="0.01">
-            <menu>
-                <button type="button" id="fecharModal">Cancelar</button>
-                <button type="submit">Confirmar</button>
+            <label for="descricao" class="modal_form_label">Descrição</label>
+            <input type="text" name="descricao" id="descricao" class="modal_form_input" required>
+            <label for="valor" class="modal_form_label">Valor</label>
+            <input type="number" name="valor" id="valor" step="0.01" min="0" class="modal_form_input" required>
+            <menu class="modal_acoes">
+                <button type="button" id="fecharModal" class="modal_form_button">Cancelar</button>
+                <button type="submit" class="modal_form_button">Confirmar</button>
             </menu>
         </form>
     </dialog>

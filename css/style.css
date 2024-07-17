@@ -31,80 +31,54 @@ body {
     width: 3em;
 }
 
-.dados {
-    background-color: var(--cor-secundaria);
+#modal {
+    width: 15em;
     padding: 1em;
+    border: 1px solid var(--cor-secundaria);
 }
 
-.dados_form {
+.modal_form {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
     gap: 1em;
 }
 
-.dados_inputs {
+.modal_form_opcao {
+    background-color: white;
+    height: 2em;
+    font-size: 1em;
+    border: 2px solid var(--cor-secundaria);
+}
+
+.modal_form_input {
+    height: 2em;
+    font-size: 1em;
+    border: 2px solid var(--cor-secundaria);
+    outline: none;
+    padding: 1em 0.5em;
+}
+
+.modal_form_input:hover, .modal_form_input:focus {
+    border-color: #2efe0c;
+}
+
+.modal_acoes {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     gap: 1em;
-    flex: 1;
 }
 
-.dados_input {
-    padding: 0.5em;
-    border: 2px solid black;
-    border-radius: 1em;
-    font-size: 1em;
-    outline: none;
-}
-
-.dados_input:hover {
-    border-color: var(--cor-primaria);
-}
-
-.dados_input:focus {
-    border-color: var(--cor-primaria);
-}
-
-#descricao {
-    width: 12em;
-}
-
-#valor {
-    width: 8em;
-}
-
-.dados_radios {
-    display: inline;
-    font-size: 1.2em;
-    padding-block: 0.5em;
-}
-
-.dados_radio {  
-    transform: scale(1.5);
-    margin-left: 1em;
-    margin-right: 0.5em;
-    padding: 0.5em;
-    border: 2px solid black;
-    border-radius: 1em;
-    font-size: 1em;
-    outline: none;
-}
-
-.dados_radio:first-child {
-    margin-left: 5px;
-}
-
-.dados_button {
+.modal_form_button {
     background-color: var(--cor-primaria);
     color: black;
-    padding: 0.5em 1em;
-    border: none;
-    border-radius: 1em;
     font-size: 1em;
+    padding: 0.5em;
+    border: none;
     cursor: pointer;
-    outline: none;
+}
+
+#fecharModal {
+    background-color: var(--cor-secundaria);
 }
 
 .conteudo {
@@ -123,6 +97,16 @@ body {
 
 .saldo img {
     width: 4em;
+}
+
+#abrirModal {
+    background-color: var(--cor-primaria);
+    color: black;
+    font-size: 1em;
+    padding: 0.5em;
+    border: none;
+    border-radius: 0.5em;
+    cursor: pointer;
 }
 
 .secoes {
