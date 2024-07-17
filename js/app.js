@@ -67,7 +67,7 @@ function limparCampos() {
 function inserirEm(valores) {
   valores.push({
     descricao: descricao.value,
-    valor: formatarValor(valor.value),
+    valor: parseFloat(valor.value)
   });
 }
 
