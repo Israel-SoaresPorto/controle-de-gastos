@@ -157,6 +157,7 @@ body {
 
     .saldo {
         font-size: 1em;
+        justify-content: center;
     }
 
     .secao_valores_item {
