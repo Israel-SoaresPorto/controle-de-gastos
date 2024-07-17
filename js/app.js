@@ -89,42 +89,36 @@ function inserirEm(valores) {
 // exibe o saldo total
 function exibirSaldo() {
   let total = somarValores(valoresReceitas) - somarValores(valoresDespesas);
-  document.querySelector(".saldo_total").textContent = formatarParaMoeda(total);
+  document.querySelector("#saldo_total").textContent = formatarParaMoeda(total);
 }
 
+// evento para abrir o modal
 abrirModal.addEventListener("click", () => {
   modal.showModal();
 });
 
+// evento para fechar o modal
 fecharModal.addEventListener("click", () => {
   modal.close();
-});  
+});
 
 // evento para submeter os dados para receitas ou despesas
 form.addEventListener("submit", (e) => {
-  try {
-    e.preventDefault();
+  e.preventDefault();
 
-    validarValor(valor.value);
+  const selecao = document.querySelector("#selecao").value;
 
-    const tipoSelecionado = document.querySelector(
-      'input[name="tipo"]:checked'
-    ).value;
-
-    if (tipoSelecionado == "receita") {
-      inserirEm(valoresReceitas);
-      exibirEm(receitas, valoresReceitas);
-    }
-
-    if (tipoSelecionado == "despesa") {
-      inserirEm(valoresDespesas);
-      exibirEm(despesas, valoresDespesas);
-    }
-
-    exibirSaldo();
-  } catch (error) {
-    alert(error.message);
-  } finally {
-    limparCampos();
+  if (selecao == "receita") {
+    inserirEm(valoresReceitas);
+    exibirEm(receitas, valoresReceitas);
   }
+
+  if (selecao == "despesa") {
+    inserirEm(valoresDespesas);
+    exibirEm(despesas, valoresDespesas);
+  }
+
+  limparCampos();
+  modal.close();
+  exibirSaldo();
 });
