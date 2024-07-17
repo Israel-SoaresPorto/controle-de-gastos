@@ -1,7 +1,10 @@
 // Selecionando elementos do DOM
 const descricao = document.querySelector("#descricao");
 const valor = document.querySelector("#valor");
-const dados = document.querySelector("#dados");
+const form = document.querySelector("#form");
+const modal = document.querySelector("#modal");
+const abrirModal = document.querySelector("#abrirModal");
+const fecharModal = document.querySelector("#fecharModal");
 const receitas = document.querySelector("#receitas");
 const despesas = document.querySelector("#despesas");
 
@@ -28,7 +31,7 @@ function criarItem(elemento, descricao, valor) {
 
 // exibe os valores na seção de receitas ou despesas
 function exibirEm(secao, valores) {
-  const secaoValores = secao.querySelector('.secao_valores');
+  const secaoValores = secao.querySelector(".secao_valores");
 
   secaoValores.innerHTML = "";
 
@@ -36,19 +39,24 @@ function exibirEm(secao, valores) {
 
   let total = somarValores(valores);
 
-  secao.querySelector('.secao_total span').textContent = formatarParaMoeda(total);
+  secao.querySelector(".secao_total span").textContent =
+    formatarParaMoeda(total);
 }
 
 // substitui virgula por ponto e formata o valor para tipo float
 function formatarValor(valor) {
-    let valorFormatado = valor.replace(",", ".");
-    return parseFloat(valorFormatado);
+  let valorFormatado = valor.replace(",", ".");
+  return parseFloat(valorFormatado);
 }
 
 // formata o valor para moeda brasileira
 function formatarParaMoeda(valor) {
-    return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', currencyDisplay: 'symbol'});
-}    
+  return valor.toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+    currencyDisplay: "symbol",
+  });
+}
 
 // soma os valores do array
 function somarValores(valores) {
@@ -72,20 +80,28 @@ function validarValor(valor) {
 
 // insere os valores no array
 function inserirEm(valores) {
-    valores.push({
-        descricao: descricao.value,
-        valor: formatarValor(valor.value)
-    });
+  valores.push({
+    descricao: descricao.value,
+    valor: formatarValor(valor.value),
+  });
 }
 
 // exibe o saldo total
 function exibirSaldo() {
-    let total = somarValores(valoresReceitas) - somarValores(valoresDespesas);
-    document.querySelector(".saldo_total").textContent = formatarParaMoeda(total);
+  let total = somarValores(valoresReceitas) - somarValores(valoresDespesas);
+  document.querySelector(".saldo_total").textContent = formatarParaMoeda(total);
 }
 
+abrirModal.addEventListener("click", () => {
+  modal.showModal();
+});
+
+fecharModal.addEventListener("click", () => {
+  modal.close();
+});  
+
 // evento para submeter os dados para receitas ou despesas
-dados.addEventListener("submit", (e) => {
+form.addEventListener("submit", (e) => {
   try {
     e.preventDefault();
 
